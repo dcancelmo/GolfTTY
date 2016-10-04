@@ -1,0 +1,23 @@
+Daniel Cancelmo
+Project 2 -- TTY Golf
+Lab: Tues. & Thurs. 12:30-1:45
+TA: Patrick Conway
+I did not collaborate with anyone on this assignment.
+
+Game name: A Little Birdie
+
+The program runs from the main method in the 'Golf' class. The user inputs their choice of course or they can quit. A switch-case statement determines which method to call (and thus which course is played) based on the user input.
+Either 'waynesCourse' or 'castleCourse' is called; both in class 'Courses'. The each contain two arrays containing the yardage and par for each hole in order. A for statement repeatedly calls method 'hole' passing in the values for each of the 18 holes.
+If-else-if statements determine the appropriate method for each shot and determines whether the distance means the ball is in the fairway or the green and if the distance needs to be absolute valued (it went beyond the hole and so the player would need to hit the opposite direction).
+Methods 'green' and 'fairway' are called depending on the distance from the hole. 'fairway' prompts for a club choice and strength. 'green' only prompts for a strength. 'green' calls method 'putter' in class 'Clubs;. 'fairway' calls method 'clubChoice' in class 'Clubs'.
+Both 'putter' and 'clubChoice' use switch case statements to assign the mean and stddev values of the shot based on the user input. Method 'nextDistance' is called to calculate the distance of the shot taken and returns it to calculate the new remaining distance. 
+This is repeated at each hole until the ball is within 1 foot of the hole. Then the next hole is given to the user by calling the next index in the arrays. Once all 18 holes are complete the round ends and the user is asked if they wish to quit or continue with a new round.
+
+
+Extra credit: I completed the first two suggestions in the assignment.
+First suggestion-
+I added randomness to the game by implementing random dialogue whenever the user is informed of their score. The method 'dialogue' in the class 'Golf' is called when this generator is implemented. A random number generator generates a number 0-2 inclusive. 
+A switch-case statement then identifies one of the 3 cases. Each case has an if-else-if statement nested inside to determine what type of response is warranted based on the score. The correct response to their score is then printed.
+Second suggestion-
+I allow the user to abandon a round at any point by entering 0 for the strength of the shot. This exits the round and allows the user to start again or quit the game entirely.
+I do this using an if statement for the fairway method and a case in the switch-case statement of the green method. If statements are then used throughout the code to check if the user has chosen to quit and break the for loop of the round. The round ends and the user is prompted if they would like to quit the game or start a new round.
